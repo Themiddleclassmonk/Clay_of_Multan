@@ -3,7 +3,6 @@ import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Draggable } from 'gsap/Draggable';
-import { useCart } from '@/context/CartContext';
 import ScrollReveal from '@/components/ScrollReveal';
 
 gsap.registerPlugin(ScrollTrigger, Draggable);
@@ -47,7 +46,6 @@ export default function OurRangeSection() {
   const draggableRef = useRef<Draggable | null>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(true);
-  const { addItem } = useCart();
 
   const updateArrows = useCallback(() => {
     const track = trackRef.current;
@@ -179,19 +177,7 @@ export default function OurRangeSection() {
                       <span className="font-body text-base font-semibold text-[#4A3728]">
                         ${product.price.toFixed(2)}
                       </span>
-                      <button
-                        onClick={() =>
-                          addItem({
-                            id: product.id,
-                            name: product.name,
-                            price: product.price,
-                            image: product.image,
-                          })
-                        }
-                        className="text-xs font-medium text-[#C4956A] hover:text-[#4A3728] transition-colors underline underline-offset-2"
-                      >
-                        Add to Cart
-                      </button>
+                      
                     </div>
                   </div>
                 </div>

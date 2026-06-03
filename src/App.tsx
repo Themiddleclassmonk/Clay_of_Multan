@@ -1,7 +1,5 @@
-import { CartProvider } from '@/context/CartContext';
 import CustomCursor from '@/components/CustomCursor';
 import Navigation from '@/components/Navigation';
-import CartDrawer from '@/components/CartDrawer';
 import Footer from '@/components/Footer';
 import HeroSection from '@/sections/HeroSection';
 import MediaRevealSection from '@/sections/MediaRevealSection';
@@ -14,10 +12,10 @@ import DiyRecipesSection from '@/sections/DiyRecipesSection';
 
 function App() {
   return (
-    <CartProvider>
+    <>
       <CustomCursor />
       <Navigation />
-      <CartDrawer />
+      
 
       <main>
         <HeroSection />
@@ -31,7 +29,7 @@ function App() {
       </main>
 
       <Footer />
-    </CartProvider>
+    </>
   );
 }
 

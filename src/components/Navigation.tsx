@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ShoppingBag } from 'lucide-react';
-import { useCart } from '@/context/CartContext';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'Shop', href: '#range' },
@@ -11,7 +10,6 @@ const navLinks = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { itemCount, toggleDrawer } = useCart();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 100);
@@ -66,19 +64,6 @@ export default function Navigation() {
 
           {/* Right Side */}
           <div className="flex items-center gap-4">
-            <button
-              onClick={toggleDrawer}
-              className="relative p-2 transition-colors duration-200 hover:text-[#D4A574]"
-              style={{ color: scrolled ? '#4A3728' : '#FFFFFF' }}
-              aria-label="Cart"
-            >
-              <ShoppingBag size={20} />
-              {itemCount > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-[#C4956A] text-white text-[10px] font-medium rounded-full flex items-center justify-center">
-                  {itemCount}
-                </span>
-              )}
-            </button>
 
             <a
               href="#range"

@@ -2,7 +2,6 @@ import { useRef, useEffect } from 'react';
 import { Check } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useCart } from '@/context/CartContext';
 import ScrollReveal from '@/components/ScrollReveal';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -23,7 +22,6 @@ export default function ProductSpotlightSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({ x: -1000, y: -1000 });
   const rafRef = useRef<number>(0);
-  const { addItem } = useCart();
 
   const productImageRef = useRef<HTMLDivElement>(null);
 
@@ -146,15 +144,6 @@ export default function ProductSpotlightSection() {
     };
   }, []);
 
-  const handleAddToCart = () => {
-    addItem({
-      id: 'raw-multani-mitti',
-      name: 'Raw Multani Mitti Powder',
-      price: 24.99,
-      image: '/assets/product-hero-raw-powder.jpg',
-    });
-  };
-
   const features = [
     '200g premium quality powder',
     'Finely sieved for smooth application',
@@ -217,14 +206,7 @@ export default function ProductSpotlightSection() {
               </p>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.5}>
-              <button
-                onClick={handleAddToCart}
-                className="mt-6 px-10 py-4 bg-[#4A3728] text-white text-sm font-medium rounded-lg transition-all duration-300 hover:bg-[#C4956A] hover:scale-[1.02] hover:shadow-lg"
-              >
-                Add to Cart
-              </button>
-            </ScrollReveal>
+           
           </div>
 
           {/* Product Image */}
