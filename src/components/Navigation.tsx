@@ -65,7 +65,7 @@ export default function Navigation() {
                 key={link.label}
                 onClick={() => handleNavClick(link.href)}
                 className="font-body text-sm font-medium tracking-wide transition-colors duration-200 hover:text-[#D4A574]"
-                style={{ color: scrolled ? "#4A3728" : "#FFFFFF" }}
+                style={{ color: scrolled ? "#4A3728" : "#4A3728" }}
               >
                 {link.label}
               </button>
@@ -73,7 +73,7 @@ export default function Navigation() {
             <button
               onClick={openContact}
               className="font-body text-sm font-medium tracking-wide transition-colors duration-200 hover:text-[#D4A574]"
-              style={{ color: scrolled ? "#4A3728" : "#FFFFFF" }}
+              style={{ color: scrolled ? "#4A3728" : "#4A3728" }}
             >
               Contact
             </button>
@@ -93,7 +93,7 @@ export default function Navigation() {
                 color: scrolled ? "#FFFFFF" : "#4A3728",
               }}
             >
-              Shop Now
+              Explore our Products
             </a>
 
             {/* Mobile Hamburger */}

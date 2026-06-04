@@ -94,7 +94,7 @@ export default function HeroSection() {
       className="relative w-full min-h-[100dvh] overflow-hidden flex items-center justify-center"
     >
       {/* Video Background */}
-      <video
+      {/* <video
         autoPlay
         muted
         loop
@@ -103,7 +103,12 @@ export default function HeroSection() {
         poster="/assets/clay-texture-reveal.jpg"
       >
         <source src="/assets/hero-background-video.mp4" type="video/mp4" />
-      </video>
+      </video> */}
+      <img
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        src="/assets/home_image.jpg"
+        alt="error"
+      />
 
       {/* Gradient Overlay */}
       <div
@@ -145,7 +150,7 @@ export default function HeroSection() {
             ref={contactRef}
             href="#contact"
             onClick={handleContact}
-            className=" px-8 sm:px-10 py-3.5 sm:py-4 border-2 border-[#4A3728] text-white text-sm font-medium rounded-lg transition-all duration-300 hover:bg-[#C4956A] hover:text-white hover:scale-[1.02] hover:shadow-lg"
+            className=" px-8 sm:px-10 py-3.5 sm:py-4 border-2 border-[#4A3728] text-white text-sm font-medium rounded-lg transition-all duration-300 hover:bg-[#C4956A] hover:text-white hover:scale-[1.02] hover:shadow-lg hover:border-[#C4956A]"
           >
             Contact Us
           </a>

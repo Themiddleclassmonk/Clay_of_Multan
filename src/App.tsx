@@ -9,13 +9,13 @@ import ProductSpotlightSection from '@/sections/ProductSpotlightSection';
 import OurRangeSection from '@/sections/OurRangeSection';
 import TestimonialsSection from '@/sections/TestimonialsSection';
 import DiyRecipesSection from '@/sections/DiyRecipesSection';
+import ContactUs from '@/sections/Contact_us';
 
 function App() {
   return (
     <>
       <CustomCursor />
       <Navigation />
-      
 
       <main>
         <HeroSection />
@@ -24,6 +24,7 @@ function App() {
         <SignatureIngredientsSection />
         <ProductSpotlightSection />
         <OurRangeSection />
+        <ContactUs />
         <TestimonialsSection />
         <DiyRecipesSection />
       </main>
