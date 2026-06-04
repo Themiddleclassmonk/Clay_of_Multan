@@ -78,7 +78,7 @@ export default function HeroSection() {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleContact = (e) => {
+  const handleContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     // 3. ADD handler
     e.preventDefault();
     setIsContactOpen(true);

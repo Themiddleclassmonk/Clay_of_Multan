@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-export default function ContactPopup({ isOpen, onClose }) {
+interface ContactPopupProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -10,14 +15,16 @@ export default function ContactPopup({ isOpen, onClose }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -50,7 +57,7 @@ export default function ContactPopup({ isOpen, onClose }) {
     >
       <div
         className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden animate-slideUp"
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
       >
         {/* Header */}
         <div className="bg-[#4A3728] px-6 py-5 flex items-center justify-between">
